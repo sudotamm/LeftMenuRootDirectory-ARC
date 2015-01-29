@@ -58,8 +58,6 @@
 #pragma mark - UINavigationControllerDelegate methods
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [super navigationController:navigationController willShowViewController:viewController animated:animated];
-    
     if([viewController isKindOfClass:[BaseMenuViewController class]])
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:kActiveNaviPanGestureNotification object:nil];
