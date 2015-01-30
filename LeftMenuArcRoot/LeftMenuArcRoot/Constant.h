@@ -57,7 +57,7 @@
 #define Is4_7Inch           [UIScreen mainScreen].bounds.size.height==667.f?YES:NO
 #define Is5_5Inch           [UIScreen mainScreen].bounds.size.height==736.f?YES:NO
 #define kStatusBarHeight    [UIApplication sharedApplication].statusBarFrame.size.height
-#define kAPPInitialOriginY  (IsIos7)?kStatusBarHeight:0
+#define kAPPInitialOriginY  (IsIos7Later)?kStatusBarHeight:0
 #define kMainProjColor      [UIColor colorWithRed:40.f/255 green:60.f/255 blue:84.f/255 alpha:1.f]
 #define DOCUMENTS_FOLDER    [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/"]
 #define kNetWorkErrorString @"网络错误"
