@@ -17,7 +17,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
-    if(IsIos7)
+    if(IsIos7Later)
     {
         //iOS7中使用tintColor和barTintColor设置样式，iOS6中需要自定义
         self.navigationBar.barTintColor = kMainProjColor;
@@ -36,7 +36,7 @@
 
 - (void)dealloc
 {
-    if (IsIos7)
+    if (IsIos7Later)
     {
         self.interactivePopGestureRecognizer.delegate = nil;
         self.delegate = nil;

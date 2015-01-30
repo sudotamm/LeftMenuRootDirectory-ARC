@@ -67,7 +67,7 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:kInActiveNaviPanGestureNotification object:nil];
     }
     
-    if(IsIos7)
+    if(IsIos7Later)
     {
         if([viewController isKindOfClass:[BaseMenuViewController class]])
         {
