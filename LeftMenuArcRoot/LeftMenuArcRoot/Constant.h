@@ -65,7 +65,8 @@
 #define kUIXValue           320.f           //设计图宽度基准
 #define kUIYValue           568.f           //设计图高度基准
 #define kUIXScaleValue      [UIScreen mainScreen].bounds.size.width/kUIXValue
-#define kUIYScaleValue      [UIScreen mainScreen].bounds.size.height/kUIYValue
+//3.5inch 高度当做4inch来计算 - 一般是用来计算动态列表单元高度，4inch的设计高度保持和3.5inch一致
+#define kUIYScaleValue      ((Is3_5Inch)?568.f:[UIScreen mainScreen].bounds.size.height)/kUIYValue
 //Notification Keys
 //view notify
 #define kShowPannelViewNotification         @"ShowPannelViewNotification"
