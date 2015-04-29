@@ -87,11 +87,7 @@
      在ios7中动画过渡期间就能接受到手势消息，导致的问题是：在pop的view还没有didShow之前调用pan手势，会能够触发pan手势
      ios7之前版本没有这个问题
      */
-    for(UIGestureRecognizer *gesture in self.view.gestureRecognizers)
-    {
-        if([gesture isMemberOfClass:[UIPanGestureRecognizer class]])
-            [self.view removeGestureRecognizer:gesture];
-    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kInActiveNaviPanGestureNotification object:nil];
 }
 
 @end
