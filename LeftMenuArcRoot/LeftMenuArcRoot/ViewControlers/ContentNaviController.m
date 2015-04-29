@@ -56,8 +56,9 @@
 }
 
 #pragma mark - UINavigationControllerDelegate methods
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    [super navigationController:navigationController didShowViewController:viewController animated:animated];
     if([viewController isKindOfClass:[BaseMenuViewController class]])
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:kActiveNaviPanGestureNotification object:nil];
@@ -75,8 +76,21 @@
         }
         else
         {
-            [[NSNotificationCenter defaultCenter] postNotificationName:kShowLightStatusBarNotification object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kShowBlackStatusBarNotification object:nil];
         }
+    }
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    /*在动画过渡过程中先移除加入到navi.view的手势，只移除加入的pan手势，保留ios7添加的UIScreenEdgePanGestureRecognizer
+     在ios7中动画过渡期间就能接受到手势消息，导致的问题是：在pop的view还没有didShow之前调用pan手势，会能够触发pan手势
+     ios7之前版本没有这个问题
+     */
+    for(UIGestureRecognizer *gesture in self.view.gestureRecognizers)
+    {
+        if([gesture isMemberOfClass:[UIPanGestureRecognizer class]])
+            [self.view removeGestureRecognizer:gesture];
     }
 }
 
