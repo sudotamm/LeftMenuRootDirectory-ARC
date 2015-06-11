@@ -74,6 +74,9 @@
 
 - (void)setNaviImageTitle:(NSString *)imageName
 {
+    //设置图片标题
+    UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+    self.navigationItem.titleView = logoImageView;
 }
 #pragma mark - UIViewController methods
 
