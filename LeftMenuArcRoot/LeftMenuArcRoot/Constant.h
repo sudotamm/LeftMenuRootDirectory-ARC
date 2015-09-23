@@ -52,6 +52,7 @@
 #define IsDevicePhone5      [UIScreen mainScreen].bounds.size.height==568.f?YES:NO
 #define IsIos7Later         [[UIDevice currentDevice].systemVersion floatValue]>=7.0?YES:NO
 #define IsIos8Later         [[UIDevice currentDevice].systemVersion floatValue]>=8.0?YES:NO
+#define IsIos9Later         [[UIDevice currentDevice].systemVersion floatValue]>=9.0?YES:NO
 #define Is3_5Inch           [UIScreen mainScreen].bounds.size.height==480.f?YES:NO
 #define Is4Inch             [UIScreen mainScreen].bounds.size.height==568.f?YES:NO
 #define Is4_7Inch           [UIScreen mainScreen].bounds.size.height==667.f?YES:NO
