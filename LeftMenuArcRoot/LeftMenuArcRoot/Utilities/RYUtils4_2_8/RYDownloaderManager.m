@@ -204,12 +204,17 @@
     NSString *realString = nil;
     if([contentType rangeOfString:@"json"].length > 0)
     {
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:nil];
+        if(params && params.allKeys.count != 0)
+        {
+            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:nil];
 #if ! __has_feature(objc_arc)
-        realString = [[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding] autorelease];
+            realString = [[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding] autorelease];
 #else
-        realString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+            realString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 #endif
+        }
+        else
+            realString = @"";
     }
     else
     {
@@ -233,14 +238,14 @@
 }
 
 - (void)uploadFileByPostWithURLString:(NSString *)urlStr
-                            postParams:(NSMutableDictionary *)params
+                           postParams:(NSMutableDictionary *)params
                           contentType:(NSString *)contentType
                              fileData:(NSData *)data
                              fileType:(NSString *)fileType
-                             fileName:(NSString *)fileName
                               fileKey:(NSString *)fileKey
+                             fileName:(NSString *)fileName
                              delegate:(id<RYDownloaderDelegate>)receiver
-                              purpose:(NSString *)purpose
+                              purpose:(NSString *)purpose;
 {
     //根据url初始化request
 #if ! __has_feature(objc_arc)

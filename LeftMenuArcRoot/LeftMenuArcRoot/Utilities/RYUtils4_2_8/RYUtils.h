@@ -8,10 +8,12 @@
 
 /*
     必要的denpendencies
-    UIView+RYUtilities - QuartzCore.framework
-    RYMediaPicker      - AssetsLibrary.framework
-    RYMediaPicker      - CoreLocation.framework
-    UIImage+RYBlurGlass   - Accelerate.framework
+    UIView+RYUtilities      - QuartzCore.framework
+    RYMediaPicker           - AssetsLibrary.framework
+    RYMediaPicker           - CoreLocation.framework
+    UIImage+RYImageEffects  - Accelerate.framework
+    RYCommonMethods+QRImage - CoreImage.framework
+ 
  版本管理：
  v1.0 
     - 添加基本常用库
@@ -107,6 +109,49 @@
     - 移除计算字符串高度过期方法的使用
  v4.0 2014-12-12
     - 加入获取应用启动图/Icon的category
+ v4.1 2014-12-13
+    - 加入RYBaseModel转换json为model的类型处理
+ v4.1.1 2015-01-26
+    - RYCommonMethods加入固定宽度多行文字的高度计算方法
+ v4.1.2 2015-01-28
+    - RYDownloadManager 修复post请求（json）参数为nil时crash的bug
+ v4.1.3 2015-02-12
+    - UIImage+RYScreenShot 修复scrollview截图，content高度为0时出现异常提示的问题
+ v4.1.4 2015-02-15
+    - RYCommonMethods 加入生成二维码图片的方法
+ v4.1.5 2015-02-15
+    - RYCommonMethods 无损放大生成的二维码图片
+ v4.1.6 2015-02-26
+    - RYAsynImageView 加入忽略缓存继续下载图片处理
+ v4.1.7 2015-03-24
+    - UIImage+RYAssetLaunchImage 修复iPhone6 Plus放大显示模式获取iPhone6 启动图失败的问题
+ v4.1.7 2015-03-27
+    - RYRootBlurViewManager 修复横屏时blurView点击区域不正确的问题
+ v4.1.8 2015-05-11
+    - RYDownloader 修复下载返回处于回调中的downloader重新下载时，reuse该downloader导致回调不正常的bug
+ v4.1.9 2015-06-17
+    - RYCommonMethods 加入计算文字宽度的方法
+ v4.2 2015-07-14
+    - RYBaseModel 加入xml数据源解析Obj的方法
+ v4.2.1 2015-07-31
+    - RYCommonMethods 加入应用名称版本号获取方法
+ v4.2.2 2015-08-26
+    - UIImage+RYScreenShot 提升截屏清晰度
+ v4.2.3 2015-08-26
+    - UIImage+RYScreenShot 截屏可以透明
+ v4.2.4 2015-08-27
+    - RYReverseLocation 解决block类型冲突的问题
+ v4.2.5 2015-11-05
+    - 移除第三方的图片模糊处理方法：UIImage+RYBlurImage
+    - 添加Apple提供的图片模糊处理方法：UIImage+RYImageEffects
+ v4.2.6 2015-11-17
+    - RYReverseLocation
+    - 修复第一次定位出现“未开启定位”的错误提示问题
+    - 修复定位后stop前出现多次回调的问题
+ v4.2.7 2015-11-19
+    - RYDownloaderManager 加入表单文件上传的文件key和文件名使用注释
+ v4.2.8 2015-11-23
+    - NSDate+RYAdditions 加入日期字符串相互转换时的nil处理
  */
 
 #ifndef RYUtils_RYUtils_h
@@ -123,7 +168,7 @@
 #import "RYReverseLocation.h"
 #import "UIDevice+RYUDID.h" 
 #import "NSArray+RYLocationTransform.h"
-#import "UIImage+RYBlurGlass.h"
+#import "UIImage+RYImageEffects.h"
 #import "UIImage+RYScreenShot.h"
 #import "RYXMLReader.h"
 #import "RYCommonMethods.h"
@@ -132,5 +177,6 @@
 #import "RYRootBlurViewManager.h"
 #import "NSObject+RYPropertyList.h"
 #import "UIImage+RYAssetLaunchImage.h"
+#import "RYBaseModel.h"
 
 #endif

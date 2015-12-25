@@ -370,19 +370,19 @@
         CGFloat maxHeightForLabel = frame.size.height - self.height - 2*margin;
         CGSize labelSize;
         /*
-        if([[UIDevice currentDevice].systemVersion floatValue]>=7.0)
-        {
+         if([[UIDevice currentDevice].systemVersion floatValue]>=7.0)
+         {
          */
-            NSString *textToMeasure = label.text;
-            NSDictionary *attributes = @{NSFontAttributeName: label.font};
-            labelSize = [textToMeasure boundingRectWithSize:CGSizeMake(maxWidthForLabel, maxHeightForLabel) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
-    /*
-        }
-        else
-        {
-            labelSize = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(maxWidthForLabel, maxHeightForLabel) lineBreakMode:label.lineBreakMode];
-        }
-     */
+        NSString *textToMeasure = label.text;
+        NSDictionary *attributes = @{NSFontAttributeName: label.font};
+        labelSize = [textToMeasure boundingRectWithSize:CGSizeMake(maxWidthForLabel, maxHeightForLabel) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
+        /*
+         }
+         else
+         {
+         labelSize = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(maxWidthForLabel, maxHeightForLabel) lineBreakMode:label.lineBreakMode];
+         }
+         */
         CGFloat lHeight = labelSize.height;
         CGFloat lWidth = labelSize.width;
         
@@ -417,23 +417,23 @@
             detailsLabel.text = self.detailsLabelText;
             detailsLabel.numberOfLines = 0;
 
-			CGFloat maxHeight = frame.size.height - self.height - 2*margin;
+            CGFloat maxHeight = frame.size.height - self.height - 2*margin;
             CGFloat maxWidth = frame.size.width - 4*margin;
             CGSize labelSize;
             /*
-            if([[UIDevice currentDevice].systemVersion floatValue]>=7.0)
-            {
+             if([[UIDevice currentDevice].systemVersion floatValue]>=7.0)
+             {
              */
-                NSString *textToMeasure = detailsLabel.text;
-                NSDictionary *attributes = @{NSFontAttributeName: detailsLabel.font};
-                labelSize = [textToMeasure boundingRectWithSize:CGSizeMake(maxWidth, maxHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
-        /*
-            }
-            else
-            {
-                labelSize = [detailsLabel.text sizeWithFont:detailsLabel.font constrainedToSize:CGSizeMake(maxWidth, maxHeight) lineBreakMode:detailsLabel.lineBreakMode];
-            }
-         */
+            NSString *textToMeasure = detailsLabel.text;
+            NSDictionary *attributes = @{NSFontAttributeName: detailsLabel.font};
+            labelSize = [textToMeasure boundingRectWithSize:CGSizeMake(maxWidth, maxHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
+            /*
+             }
+             else
+             {
+             labelSize = [detailsLabel.text sizeWithFont:detailsLabel.font constrainedToSize:CGSizeMake(maxWidth, maxHeight) lineBreakMode:detailsLabel.lineBreakMode];
+             }
+             */
             lHeight = labelSize.height;
             lWidth = labelSize.width;
 			
