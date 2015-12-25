@@ -47,7 +47,7 @@
 #define kAppDownloadUrl     @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=%@&mt=8"
 
 //Constant Values
-#define kMaxCacheSize       50*1024*1024
+#define kMaxCacheSize       500*1024*1024
 #define IsIPad()            (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define IsDevicePhone5      [UIScreen mainScreen].bounds.size.height==568.f?YES:NO
 #define IsIos7Later         [[UIDevice currentDevice].systemVersion floatValue]>=7.0?YES:NO
