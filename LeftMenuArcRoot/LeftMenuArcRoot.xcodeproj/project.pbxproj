@@ -547,6 +547,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LeftMenuArcRoot/SupportFiles/PrefixHeader.pch";
 				INFOPLIST_FILE = LeftMenuArcRoot/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "-DRYAN_DEBUG=1";
 				PRODUCT_BUNDLE_IDENTIFIER = yulong.ryan.LeftMenuArcRoot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -562,6 +563,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LeftMenuArcRoot/SupportFiles/PrefixHeader.pch";
 				INFOPLIST_FILE = LeftMenuArcRoot/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "-DRYAN_DEBUG=0";
 				PRODUCT_BUNDLE_IDENTIFIER = yulong.ryan.LeftMenuArcRoot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

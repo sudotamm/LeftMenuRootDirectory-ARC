@@ -6,6 +6,17 @@
 //  Copyright (c) 2014 Ryan. All rights reserved.
 //
 
+//debug 版本打开注释输出，release版本去掉注释
+#if (RYAN_DEBUG)
+
+#define NSLog(...) NSLog(__VA_ARGS__)
+
+#else
+
+#define NSLog(...)
+
+#endif
+
 #ifndef LeftMenuArcRoot_PrefixHeader_pch
 #define LeftMenuArcRoot_PrefixHeader_pch
 
