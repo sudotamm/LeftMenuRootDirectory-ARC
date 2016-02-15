@@ -68,8 +68,8 @@
 #define kUIXScaleValue      [UIScreen mainScreen].bounds.size.width/kUIXValue
 //3.5inch 高度当做4inch来计算 - 一般是用来计算动态列表单元高度，4inch的设计高度保持和3.5inch一致
 #define kUIYScaleValue      ((Is3_5Inch)?568.f:[UIScreen mainScreen].bounds.size.height)/kUIYValue
+
 //Notification Keys
-//view notify
 #define kShowPannelViewNotification         @"ShowPannelViewNotification"
 #define kShowModuleViewNotification         @"ShowModuleViewNotification"
 #define kShowLeftMenuNotification           @"ShowLeftMenuNotification"
@@ -78,5 +78,9 @@
 #define kInActiveNaviPanGestureNotification @"InActiveNaviPanGestureNotification"
 #define kShowLightStatusBarNotification     @"ShowLightStatusBarNotification"
 #define kShowBlackStatusBarNotification     @"ShowBlackStatusBarNotification"
+
+//App Constant Values
+#define kIPAddress                          (RYAN_DEBUG)?@"http://www.test.com":@"http://www.production.com"
+#define kServerAddress                      [NSString stringWithFormat:@"%@",kIPAddress]
 
 #endif
